@@ -26,7 +26,7 @@ module.exports.products = [
         'is_perishable': false,
         'product_name': 'Arroz',
         'shipping_date': '2019-03-10',
-        status: 'em estoque'
+        status: 'pouco em estoque'
     }, {
         id: 9,
         'product_type': 'FR',
@@ -47,14 +47,14 @@ module.exports.products = [
         'is_perishable': false,
         'product_name': 'Trakinas',
         'shipping_date': '2019-04-03',
-        status: 'em estoque'
+        status: 'em falta'
     }, {
         id: 65,
         'product_type': 'MA',
         'is_perishable': false,
         'product_name': 'Pure de Batatas em pó',
         'shipping_date': '2019-01-27',
-        status: 'em estoque'
+        status: 'em falta'
     }, {
         id: 95,
         'product_type': 'EL',
@@ -68,7 +68,7 @@ module.exports.products = [
         'is_perishable': false,
         'product_name': 'Coca-Cola 3.3l',
         'shipping_date': '2018-12-08',
-        status: 'em estoque'
+        status: 'pouco em estoque'
     }, {
         id: 208,
         'product_type': 'BE',
@@ -82,14 +82,14 @@ module.exports.products = [
         'is_perishable': false,
         'product_name': 'Sabão em Pó',
         'shipping_date': '2018-11-15',
-        status: 'em estoque'
+        status: 'em falta'
     }, {
         id: 42,
         'product_type': 'MA',
         'is_perishable': false,
         'product_name': 'Macarrão',
         'shipping_date': '2019-04-15',
-        status: 'em estoque'
+        status: 'pouco em estoque'
     }
 ]
 
@@ -102,5 +102,5 @@ module.exports.stores = [
     'Mercadinho Marealva',
     'Boteco do Tio Jão',
     'Mercearia do Wilker',
-    'Meracdo do Paulinho'
+    'Mercado do Paulinho'
 ]
