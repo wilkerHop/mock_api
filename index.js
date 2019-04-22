@@ -1,5 +1,14 @@
 const app = require('express')();
+const cors = require('cors');
 const { stores, products } = require('./data')
+
+app.use(cors({
+	origin: "*",
+	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+	preflightContinue: false,
+	optionsSuccessStatus: 204,
+	allowedHeaders: ['Origin', 'X-Requested-With', 'xx-access-token', 'Content-Type', 'Accept']
+}))
 
 app.get('/products', (req, res) => { res.send(products) })
 
