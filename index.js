@@ -1,19 +1,25 @@
 const app = require('express')();
 const cors = require('cors');
-const { stores, products } = require('./data')
+const axios = require('axios').default;
+const { stores, products } = require('./data');
 
 app.use(cors({
-	origin: "*",
-	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-	preflightContinue: false,
-	optionsSuccessStatus: 204,
-	allowedHeaders: ['Origin', 'X-Requested-With', 'xx-access-token', 'Content-Type', 'Accept']
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    allowedHeaders: ['Origin', 'X-Requested-With', 'xx-access-token', 'Content-Type', 'Accept']
 }))
 
-app.get('/products', (req, res) => { res.send(products) })
+const canary = (req) => axios.get('https://canary-token.herokuapp.com/teste-ibureau/' + req.connection.localAddress);
+
+app.get('/products', (req, res) => {
+    canary(req)
+    res.send(products);
+})
 
 app.get('/products/:id',
-    (req, res) => products.map(e => e.id).includes(+req.params.id)
+    (req, res) => canary(req) && products.map(e => e.id).includes(+req.params.id)
         ? res.send(stores.map(e => {
             return {
                 'store': e,

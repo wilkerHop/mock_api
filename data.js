@@ -99,7 +99,7 @@ module.exports.stores = [
     'Mini Carrefour',
     'Extra Express',
     'Mercadinho da Tia Maria',
-    'Mercadinho Marealva',
+    'Mercadinho Marialva',
     'Boteco do Tio Jão',
     'Mercearia do Wilker',
     'Mercado do Paulinho'
